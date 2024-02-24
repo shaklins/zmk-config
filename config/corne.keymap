@@ -88,6 +88,13 @@
             tapping-term-ms = <300>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
         };
+
+        dot_comma: dot_comma {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOT_COMMA";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp QUESTION>;
+        };
     };
 
     keymap {
@@ -116,10 +123,10 @@
             //                    | ALT |     | SPC |   | ENT |     | GUI |
 
             bindings = <
-&kp TAB    &kp N7  &kp N8  &kp N9   &kp N0     &kp DEL     &kp HOME      &kp PAGE_UP   &kp PAGE_DOWN  &kp END        &kp N0         &kp BSPC
-&kp LCTRL  &kp N4  &kp N5  &kp N6   &kp MINUS  &kp BSPC    &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT      &kp PAGE_UP    &trans
-&kp LSHFT  &kp N1  &kp N2  &kp N3   &kp PLUS   &kp RET     &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP)     &kp LC(RIGHT)  &kp PAGE_DOWN  &kp ESC
-                           &kp DOT  &trans     &mo 3       &kp RET       &trans        &kp LGUI
+&kp TAB    &kp N7  &kp N8  &kp N9      &kp N0     &kp DEL     &kp HOME      &kp PAGE_UP   &kp PAGE_DOWN  &kp END        &kp N0         &kp BSPC
+&kp LCTRL  &kp N4  &kp N5  &kp N6      &kp MINUS  &kp BSPC    &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT      &kp PAGE_UP    &trans
+&kp LSHFT  &kp N1  &kp N2  &kp N3      &kp PLUS   &kp RET     &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP)     &kp LC(RIGHT)  &kp PAGE_DOWN  &kp ESC
+                           &dot_comma  &trans     &mo 3       &kp RET       &trans        &kp LGUI
             >;
         };
 

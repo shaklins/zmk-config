@@ -36,6 +36,31 @@
             bindings = <&tog 0>;
             key-positions = <38 39>;
         };
+
+        Cut {
+            bindings = <&kp K_CUT>;
+            key-positions = <26 28>;
+        };
+
+        Copy {
+            bindings = <&kp K_COPY>;
+            key-positions = <27 26>;
+        };
+
+        Paste {
+            bindings = <&kp K_PASTE>;
+            key-positions = <27 28>;
+        };
+
+        Multipy {
+            bindings = <&kp KP_MULTIPLY>;
+            key-positions = <28 29>;
+        };
+
+        Divide {
+            bindings = <&kp KP_DIVIDE>;
+            key-positions = <16 17>;
+        };
     };
 
     behaviors {
@@ -45,7 +70,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             hold-trigger-key-positions = <39 40 41 30 31 32 33 6 7 8 9 10 18 19 20 21 22 30 31 32 33 34 11 23 35>;
         };
 
@@ -55,7 +80,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
         };
     };
@@ -86,10 +111,10 @@
             //                    | ALT |     | SPC |   | ENT |     | GUI |
 
             bindings = <
-&kp TAB    &kp N7  &kp N8  &kp N9    &kp N0     &kp N5      &kp N6        &kp N7        &kp N8      &kp N9         &kp N0         &kp BSPC
-&kp LCTRL  &kp N4  &kp N5  &kp N6    &kp MINUS  &kp BSPC    &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &kp PAGE_UP    &trans
-&kp LSHFT  &kp N1  &kp N2  &kp N3    &kp PLUS   &kp RET     &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP)  &kp LC(RIGHT)  &kp PAGE_DOWN  &kp ESC
-                           &kp LALT  &trans     &mo 3       &kp RET       &trans        &kp LGUI
+&kp TAB    &kp N7  &kp N8  &kp N9   &kp N0     &kp DEL     &kp HOME      &kp PAGE_UP   &kp PAGE_DOWN  &kp END        &kp N0         &kp BSPC
+&kp LCTRL  &kp N4  &kp N5  &kp N6   &kp MINUS  &kp BSPC    &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT      &kp PAGE_UP    &trans
+&kp LSHFT  &kp N1  &kp N2  &kp N3   &kp PLUS   &kp RET     &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP)     &kp LC(RIGHT)  &kp PAGE_DOWN  &kp ESC
+                           &kp DOT  &trans     &mo 3       &kp RET       &trans        &kp LGUI
             >;
         };
 
@@ -102,7 +127,7 @@
 
             bindings = <
 &kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &kp N1    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
 &kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
                              &kp LALT  &trans    &kp SPACE    &kp RET    &trans     &kp LGUI
             >;

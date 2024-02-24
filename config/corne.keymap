@@ -38,17 +38,17 @@
         };
 
         Cut {
-            bindings = <&kp K_CUT>;
+            bindings = <&kp LC(X)>;
             key-positions = <26 28>;
         };
 
         Copy {
-            bindings = <&kp K_COPY>;
+            bindings = <&kp LC(C)>;
             key-positions = <27 26>;
         };
 
         Paste {
-            bindings = <&kp K_PASTE>;
+            bindings = <&kp LC(V)>;
             key-positions = <27 28>;
         };
 
@@ -101,9 +101,9 @@
             //                    | ALT | LWR | SPC |   | ENT | RSE  | GUI |
 
             bindings = <
-&kp TAB    &kp Q        &kp W        &kp E          &kp R         &kp T          &kp Y    &kp U         &kp I          &kp O        &kp P                &kp BSPC
-&kp LCTRL  &hml LCMD A  &hml LALT S  &hml LSHIFT D  &hml LCTRL F  &kp G          &kp H    &hmr RCTRL J  &hmr RSHIFT K  &hmr RALT L  &hmr RCMD SEMICOLON  &kp SQT
-&kp LSHFT  &kp Z        &kp X        &kp C          &kp V         &kp B          &kp N    &kp M         &kp COMMA      &kp DOT      &kp FSLH             &kp ESC
+&kp TAB    &kp Q        &kp W        &kp E          &kp R         &kp T          &kp Y    &kp U         &kp I          &kp O        &kp P                    &kp BSPC
+&kp LCTRL  &hml LCMD A  &hml LALT S  &hml LSHIFT D  &hml LCTRL F  &kp G          &kp H    &hmr RCTRL J  &hmr RSHIFT K  &hmr LALT L  &hmr LEFT_GUI SEMICOLON  &kp SQT
+&kp LSHFT  &kp Z        &kp X        &kp C          &kp V         &kp B          &kp N    &kp M         &kp COMMA      &kp DOT      &kp FSLH                 &kp ESC
                                      &kp LALT       &mo 1         &lt 4 SPACE    &kp RET  &mo 2         &kp LGUI
             >;
         };

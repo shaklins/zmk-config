@@ -93,7 +93,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "DOT_COMMA";
             #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COMMA>;
+            bindings = <&kp KP_DOT>, <&kp KP_COMMA>;
         };
     };
 

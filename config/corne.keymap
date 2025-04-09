@@ -95,6 +95,31 @@
             #binding-cells = <0>;
             bindings = <&kp SLASH>, <&kp QUESTION>;
         };
+
+        dot_comma_alt: dot_comma_alt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DOT_COMMA_ALT";
+            bindings = <&comma_alt>, <&dot_alt>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+        };
+    };
+
+    macros {
+        dot_alt: dot_alt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_0 &kp KP_NUMBER_4 &kp KP_NUMBER_6 &kt LALT>;
+            label = "DOT_ALT";
+        };
+
+        comma_alt: comma_alt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_ALT &kp KP_NUMBER_0 &kp KP_NUMBER_0 &kp KP_NUMBER_4 &kp KP_NUMBER_4 &kt LALT>;
+            label = "COMMA_ALT";
+        };
     };
 
     keymap {
@@ -123,10 +148,10 @@
             //                    | ALT |     | SPC |   | ENT |     | GUI |
 
             bindings = <
-&kp TAB    &kp N7  &kp N8  &kp N9      &kp N0     &kp DEL     &kp HOME      &kp PAGE_DOWN  &kp PAGE_UP  &kp END        &kp N0         &kp BSPC
-&kp LCTRL  &kp N4  &kp N5  &kp N6      &kp MINUS  &kp BSPC    &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &kp PAGE_UP    &trans
-&kp LSHFT  &kp N1  &kp N2  &kp N3      &kp PLUS   &kp RET     &kp LC(LEFT)  &kp LC(DOWN)   &kp LC(UP)   &kp LC(RIGHT)  &kp PAGE_DOWN  &kp ESC
-                           &dot_comma  &trans     &mo 3       &kp RET       &trans         &kp LGUI
+&kp TAB    &kp N7  &kp N8  &kp N9              &kp N0     &kp DEL     &kp HOME      &kp PAGE_DOWN  &kp PAGE_UP  &kp END        &kp N0         &kp BSPC
+&kp LCTRL  &kp N4  &kp N5  &kp N6              &kp MINUS  &kp BSPC    &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &kp PAGE_UP    &trans
+&kp LSHFT  &kp N1  &kp N2  &kp N3              &kp PLUS   &kp RET     &kp LC(LEFT)  &kp LC(DOWN)   &kp LC(UP)   &kp LC(RIGHT)  &kp PAGE_DOWN  &kp ESC
+                           &dot_comma_alt 0 0  &trans     &mo 3       &kp RET       &trans         &kp LGUI
             >;
         };
 
@@ -153,19 +178,19 @@
             //                    | ALT |     | SPC |   | ENT |     | GUI |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp LG(NUMBER_1)  &kp LG(N2)    &kp LG(NUMBER_3)  &kp LG(N9)    &kp LG(NUMBER_4)  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_CLR        &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3      &bt BT_SEL 4
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans            &trans        &trans            &trans        &trans            &trans
+&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp LG(NUMBER_1)  &kp LG(N2)    &kp LG(NUMBER_3)  &kp LG(NUMBER_4)  &kp LG(N5)    &kp BSPC
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_CLR        &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4
+&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans            &trans        &trans            &trans            &trans        &trans
                                         &kp LALT      &trans        &kp SPACE       &kp RET           &trans        &kp LGUI
             >;
         };
 
         fn_media {
             bindings = <
-&kp TAB    &kp F11  &kp F12  &trans    &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))    &kp C_MUTE    &kp C_PLAY  &trans                &trans  &trans  &trans
-&kp LCTRL  &kp F1   &kp F2   &kp F3    &kp F4            &kp F5               &kp C_VOL_UP  &kp C_NEXT  &kp C_BRIGHTNESS_INC  &trans  &trans  &trans
-&kp LSHFT  &kp F6   &kp F7   &kp F8    &kp F9            &kp F10              &kp C_VOL_DN  &kp C_PREV  &kp C_BRIGHTNESS_DEC  &trans  &trans  &kp ESC
-                             &kp LALT  &trans            &trans               &trans        &trans      &trans
+&kp LC(F14)  &kp F11  &kp F12  &kp LC(F13)  &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))    &kp C_MUTE    &kp C_PLAY_PAUSE  &trans                &trans  &trans  &trans
+&kp LC(F15)  &kp F1   &kp F2   &kp F3       &kp F4            &kp F5               &kp C_VOL_UP  &kp C_NEXT        &kp C_BRIGHTNESS_INC  &trans  &trans  &trans
+&kp LC(F16)  &kp F6   &kp F7   &kp F8       &kp F9            &kp F10              &kp C_VOL_DN  &kp C_PREV        &kp C_BRIGHTNESS_DEC  &trans  &trans  &kp ESC
+                               &kp LALT     &trans            &trans               &trans        &trans            &trans
             >;
         };
 

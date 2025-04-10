@@ -151,7 +151,7 @@
 &kp TAB    &kp N7  &kp N8  &kp N9              &kp N0     &kp DEL     &kp HOME      &kp PAGE_DOWN  &kp PAGE_UP  &kp END        &kp N0         &kp BSPC
 &kp LCTRL  &kp N4  &kp N5  &kp N6              &kp MINUS  &kp BSPC    &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &kp PAGE_UP    &trans
 &kp LSHFT  &kp N1  &kp N2  &kp N3              &kp PLUS   &kp RET     &kp LC(LEFT)  &kp LC(DOWN)   &kp LC(UP)   &kp LC(RIGHT)  &kp PAGE_DOWN  &kp ESC
-                           &dot_comma_alt 0 0  &trans     &mo 3       &kp RET       &trans         &kp LGUI
+                           &mt QUESTION SLASH  &trans     &mo 3       &kp RET       &trans         &kp LGUI
             >;
         };
 
